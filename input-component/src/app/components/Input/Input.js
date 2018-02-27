@@ -4,7 +4,7 @@ import { Input as AntInput } from 'antd'
 import cn from 'classnames'
 import c from './input.scss'
 
-export default class Input extends React.Component {
+export class InputComponent extends React.Component {
   static propTypes = {
     label: PropTypes.shape({
       label: PropTypes.string.isRequired,
@@ -14,9 +14,10 @@ export default class Input extends React.Component {
     id: PropTypes.string,
     disabled: PropTypes.bool,
     placeholder: PropTypes.string,
+    defaultValue: PropTypes.string,
     input: PropTypes.shape({
       name: PropTypes.string.isRequired,
-      value: PropTypes.string,
+      defaultValue: PropTypes.string,
     }).isRequired,
     meta: PropTypes.shape({
       error: PropTypes.node,
@@ -33,19 +34,15 @@ export default class Input extends React.Component {
       label: '',
       position: 'top',
     },
-    input: {
-      value: '',
-    },
     meta: {
       error: '',
       touched: false,
     },
-    onClick: () => {},
-    onChange: () => {},
   }
 
   render() {
     const {
+      input,
       label: {
         label,
         position,
@@ -54,10 +51,6 @@ export default class Input extends React.Component {
       id,
       disabled,
       placeholder,
-      input: {
-        name,
-        value,
-      },
       meta: {
         error,
         touched,
@@ -85,14 +78,13 @@ export default class Input extends React.Component {
                 className={cn(c.input, {
                   [c.inputError]: error && touched,
                 })}
-                name={name}
                 placeholder={placeholder}
                 type={type}
-                defaultValue={value}
                 disabled={disabled}
                 size='large'
                 onClick={onClick}
                 onChange={onChange}
+                {...input}
               />
 
             {(error && touched) &&

@@ -1,5 +1,6 @@
 import React from "react"
 import {reduxForm, Field} from "redux-form"
+import { InputComponent } from "../components/Input/Input"
 
 const validation = values => {
   const errors = {
@@ -21,58 +22,71 @@ const validation = values => {
   return errors
 }
 
-const field = ({
-  input,
-  name,
-  type,
-  placeholder,
-  meta: { touched, error }
-}) => (
-  <div className="field-container">
-    <input {...input} placeholder={placeholder} type={type} />
-    {touched && (
-      error && error.map((error, i) => (
-        <span
-          className="error"
-          key={`index-${i}`}
-        >{error}</span>
-      ))
-    )}
-  </div>
-)
+class Form extends React.Component {
+  constructor() {
+    super()
 
-const Form = props => {
-  const {
-    handleSubmit,
-    submitting,
-    pristine,
-  } = props
+    this.state = {
+      touched: false,
+    }
+  }
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <Field
-        name="fieldOne"
-        component={field}
-        type="text"
-        placeholder="any values"
-      />
+  makeTouched = () => this.setState({ touched: true })
 
-      <div>
-        <button
-          type="submit"
-          disabled={pristine || submitting}
-        >Submit</button>
-      </div>
-    </form>
-  )
-}
+  render() {
+    const {
+      handleSubmit,
+      submitting,
+      pristine,
+    } = this.props
 
-const handleSubmit = values => {
-  console.log(values);
+    return (
+      <form onSubmit={handleSubmit}>
+        <Field
+          label={{
+            label: 'first field',
+            position: 'left',
+          }}
+          name="fieldOne"
+          component={InputComponent}
+          type="text"
+          placeholder="any values"
+          onClick={() => console.log('click')}
+        />
+
+        <InputComponent
+          label={{
+            label: 'second field',
+          }}
+          input={{
+            name: 'fieldTwo',
+            defaultValue: 'Default value'
+          }}
+          meta={{
+            error: ['Error1', 'Error2'],
+            touched: this.state.touched,
+          }}
+          type="text"
+          placeholder="any values"
+          onClick={this.makeTouched}
+          onChange={() => console.log('change!')}
+        />
+
+        <div>
+          <button
+            type="submit"
+            disabled={pristine || submitting}
+          >Submit</button>
+        </div>
+      </form>
+    )
+  }
 }
 
 export default reduxForm({
   form: "SimpleForm",
   validate: validation,
-  onSubmit: handleSubmit,
+  initialValues: {
+    fieldOne: 'Default value redux-form'
+  }
 })(Form)
