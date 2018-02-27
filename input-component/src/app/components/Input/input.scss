@@ -1,0 +1,76 @@
+@import '../../styles/base.scss';
+
+.container {
+  @include flex(column, $justify: center);
+  @include mb(1.5);
+
+  :global {
+    @import '~antd/lib/input/style/index';
+  }
+
+  &Row {
+    flex-direction: row;
+  }
+}
+
+.inputContainer {
+  flex: 1 0 100%;
+
+  .input {
+    @include font(input, $color-black);
+
+    border-color: $color-gray-light;
+
+    &Error {
+      border-color: $color-error;
+      color: $color-error;
+
+      &:hover {
+        border-color: $color-error;
+      }
+
+      &:focus {
+        border-color: $color-error;
+        box-shadow: 0 0 0 2px $color-red-transparent-25;
+      }
+    }
+  }
+}
+
+.label {
+  @include font(label, $color-gray);
+  @include mb(0.5);
+
+  flex: 0 0 100%;
+}
+
+.containerRow {
+  .label {
+    @include flex($align: center, $justify: flex-end);
+    @include mb(0);
+
+    flex: 0 0 30%;
+    max-width: 180px;
+    padding-right: 32px;
+  }
+
+  .inputContainer {
+    flex: 1 0 70%;
+  }
+}
+
+.errorsContainer {
+  @include mt(0.5);
+}
+
+.errorList {
+  @include m(0);
+  @include p(0);
+
+  display: block;
+  list-style-type: none;
+}
+
+.error {
+  @include font(inputError, $color-error);
+}

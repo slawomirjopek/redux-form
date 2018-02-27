@@ -1,0 +1,194 @@
+$color-shade-amount: 15%;
+$color-trans-amount: 0.5;
+
+$color-black: #364658;
+
+$color-gray: #7b8fa5;
+$color-gray-light: #dee5ed;
+
+$color-white: #fff;
+
+$color-blue: #387fea;
+$color-blue-light: #dce6f5;
+
+$color-green: #33d7b0;
+$color-green-light: #dbefef;
+
+$color-orange: #e78740;
+$color-orange-light: #ede7e4;
+
+$color-red: #e74057;
+$color-red-light: #ede0e6;
+
+$color-violet: #5133d7;
+$color-violet-light: #dedff3;
+
+$color-primary: $color-black;
+$color-secondary: $color-gray;
+$color-secondary-dark: darken($color-secondary, $color-shade-amount);
+
+$color-success: #6acb00;
+$color-error: #e74057;
+$color-warning: #ffb11f;
+
+$color-blue-transparent-10: rgba(56, 127, 234, 0.1);
+$color-blue-transparent-25: rgba(56, 127, 234, 0.25);
+
+$color-green-transparent-10: rgba(51, 215, 176, 0.1);
+$color-green-transparent-25: rgba(51, 215, 176, 0.25);
+
+$color-red-transparent-10: rgba(231, 64, 87, 0.1);
+$color-red-transparent-25: rgba(231, 64, 87, 0.25);
+
+// Gradients
+$gradient-blue: linear-gradient(to right, #37a0f6 0%, #387ee9 100%);
+
+// Bootstrap reboot
+$enable-hover-media-query: false;
+
+$headings-margin-bottom: 0;
+$font-family-base: 'Rubik', Arial, sans-serif;
+$font-family-secondary: Arial, sans-serif;
+$font-size-base: 16px; // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+$font-weight-base: normal;
+$line-height-base: $font-size-base;
+$dt-font-weight: $font-weight-base;
+
+$body-color: $color-black;
+$body-bg: $color-white;
+$text-muted: $color-gray;
+
+$link-color: $color-secondary;
+$link-decoration: none;
+$link-hover-color: $link-color;
+$link-hover-decoration: underline;
+
+$table-cell-padding: 0;
+$paragraph-margin-bottom: 0;
+
+// Breakpoints
+$grid-breakpoints: (
+        xs: 0,
+        sm: 544px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1600px
+);
+
+// Grid
+$grid-columns: 12;
+$grid-fluid: false;
+$grid-gutter-widths: (
+        down sm: 40px,
+        up md: 30px,
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+);
+
+// Positioning
+$z-indexes: (
+        'modal',
+        'intercom',
+        'tooltip',
+        'body',
+);
+
+// Spacing
+$spacing-sizes: (
+        0: 0,
+        0.5: 5px,
+        1: 10px,
+        1.5: 15px,
+        2: 20px,
+        5: 50px,
+        10: 100px,
+);
+$spacing-important: false;
+
+// Typography
+$typography: (
+        base: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: $font-size-base,
+                        line-height: 30px,
+                        font-weight: 400,
+                )
+        ),
+        xs: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 12px,
+                        line-height: 19px,
+                        font-weight: 400,
+                )
+        ),
+        h2: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 24px,
+                        line-height: 28px,
+                        font-weight: 500,
+                ),
+        ),
+        tab: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 13px,
+                        font-weight: 500,
+                ),
+        ),
+        avatar: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 13px,
+                        line-height: 36px,
+                        font-weight: 500,
+                )
+        ),
+        input: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 12px,
+                        line-height: 19px,
+                        font-weight: 400,
+                )
+        ),
+        inputError: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 11px,
+                        line-height: 13px,
+                        font-weight: 500,
+                )
+        ),
+        label: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 10px,
+                        line-height: 12px,
+                        font-weight: 500,
+                        text-transform: uppercase,
+                )
+        ),
+);
+
+
+// Buttons
+$enable-rounded: true;
+$btn-focus-width: 2px;
+$enable-shadows: false;
+$btn-active-box-shadow: inset 0 3px 5px rgba($color-black, .125);
+$btn-box-shadow: inset 0 1px 0 rgba($color-white, .15), 0 1px 1px rgba($color-black, .075);
+
+// Gradients
+$enable-gradients: false;
+
+// Border radius
+$border-radius: 5px;

@@ -1,0 +1,24 @@
+@import '~@7ninjas/scss-mixins/all';
+@import './variables.scss';
+
+:global {
+  @import '~bootstrap/scss/reboot';
+  @import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
+
+  h1, h2, h3, h4, h5, h6 {
+    @include mb(0);
+  }
+
+  button {
+    @include hover() {
+      cursor: pointer;
+    }
+  }
+
+  *,
+  button {
+    @include hover-focus() {
+      outline: 0;
+    }
+  }
+}

@@ -8,16 +8,56 @@ module.exports = {
     publicPath: '/app/'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
-        loader: 'babel-loader'
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        query: {
+          presets: [
+            "react",
+            "env",
+          ],
+          plugins: ["transform-class-properties"]
+        },
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      }
+        loader: "style-loader!css-loader"
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 1,
+              modules: true,
+              localIdentName: "[name]_[local]_[hash:base64:5]"
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+              localIdentName: "[name]_[local]_[hash:base64:5]"
+            }
+          },
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                require('postcss-flexbugs-fixes'),
+              ],
+            },
+          },
+        ],
+      },
     ]
   }
 };

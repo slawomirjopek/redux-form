@@ -14,7 +14,7 @@ const validation = values => {
     errors.fieldOne.push('Field should contain at least one number')
   }
 
-  if (!errors.length) {
+  if (!errors.fieldOne.length) {
     errors.fieldOne = ''
   }
 
@@ -30,9 +30,14 @@ const field = ({
 }) => (
   <div className="field-container">
     <input {...input} placeholder={placeholder} type={type} />
-    {touched &&
-    (error && <span className="error">{error}</span>)
-    }
+    {touched && (
+      error && error.map((error, i) => (
+        <span
+          className="error"
+          key={`index-${i}`}
+        >{error}</span>
+      ))
+    )}
   </div>
 )
 
