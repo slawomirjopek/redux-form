@@ -17,14 +17,14 @@ export class InputComponent extends React.Component {
     defaultValue: PropTypes.string,
     input: PropTypes.shape({
       name: PropTypes.string.isRequired,
-      defaultValue: PropTypes.string,
+      value: PropTypes.string,
+      onClick: PropTypes.func,
+      onChange: PropTypes.func,
     }).isRequired,
     meta: PropTypes.shape({
       error: PropTypes.node,
       touched: PropTypes.bool,
     }),
-    onClick: PropTypes.func,
-    onChange: PropTypes.func,
   }
 
   static defaultProps = {
@@ -38,6 +38,17 @@ export class InputComponent extends React.Component {
       error: '',
       touched: false,
     },
+  }
+
+  onChange = () => {
+    const {
+      input: {
+        value,
+        onChange,
+      }
+    } = this.props
+
+    onChange(value)
   }
 
   render() {
@@ -55,8 +66,6 @@ export class InputComponent extends React.Component {
         error,
         touched,
       },
-      onClick,
-      onChange,
     } = this.props
 
     return (
@@ -73,19 +82,17 @@ export class InputComponent extends React.Component {
         }
 
           <div className={c.inputContainer}>
-              <AntInput
-                id={id}
-                className={cn(c.input, {
-                  [c.inputError]: error && touched,
-                })}
-                placeholder={placeholder}
-                type={type}
-                disabled={disabled}
-                size='large'
-                onClick={onClick}
-                onChange={onChange}
-                {...input}
-              />
+            <AntInput
+              {...input}
+              id={id}
+              className={cn(c.input, {
+                [c.inputError]: error && touched,
+              })}
+              placeholder={placeholder}
+              type={type}
+              disabled={disabled}
+              size='large'
+            />
 
             {(error && touched) &&
             <div className={c.errorsContainer}>

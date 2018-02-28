@@ -28,10 +28,13 @@ class Form extends React.Component {
 
     this.state = {
       touched: false,
+      inputValue: 'defaultValue',
     }
   }
 
   makeTouched = () => this.setState({ touched: true })
+
+  updateValue = ({ target: { value } }) => this.setState({ inputValue: value })
 
   render() {
     const {
@@ -59,8 +62,10 @@ class Form extends React.Component {
             label: 'second field',
           }}
           input={{
+            value: this.state.inputValue,
             name: 'fieldTwo',
-            defaultValue: 'Default value'
+            onClick: this.makeTouched,
+            onChange: this.updateValue,
           }}
           meta={{
             error: ['Error1', 'Error2'],
@@ -68,8 +73,6 @@ class Form extends React.Component {
           }}
           type="text"
           placeholder="any values"
-          onClick={this.makeTouched}
-          onChange={() => console.log('change!')}
         />
 
         <div>
