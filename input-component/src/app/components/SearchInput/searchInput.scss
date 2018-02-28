@@ -1,0 +1,56 @@
+@import '../../styles/base.scss';
+
+.wrapper {
+  :global {
+    @import '~antd/lib/select/style/index';
+
+    .ant-select-selection {
+      @include font(input, $color-gray);
+      @include relative;
+
+      background: transparent;
+    }
+
+    .ant-select-selection__placeholder,
+    .ant-select-search__field__placeholder {
+      @include ml(3);
+    }
+
+    .ant-select-search__field {
+      @include pl(3);
+
+      border-radius: 8px;
+      border: 1px solid $color-gray-light;
+    }
+  }
+
+  .select {
+    @include size(100%);
+
+    font-size: 14px;
+    color: $color-black;
+
+    .option {
+      font-size: 14px;
+      color: $color-black;
+    }
+  }
+
+  .selectContainer {
+    @include relative;
+  }
+
+  .searchIcon {
+    @include absolute(top 50% left 14px);
+    @include size(16px);
+
+    display: block;
+    transform: translateY(-50%);
+    background: url('../../../assets/icon-search.svg') no-repeat;
+  }
+}
+
+.errorsContainer {
+  @include mt(0.5);
+  @include font(inputError, $color-error);
+}
