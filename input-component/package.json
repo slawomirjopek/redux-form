@@ -36,6 +36,7 @@
     "classnames": "^2.2.5",
     "css-loader": "^0.28.10",
     "enzyme": "^2.9.1",
+    "file-loader": "^1.1.10",
     "mocha": "^3.5.1",
     "node-sass": "^4.7.2",
     "postcss-flexbugs-fixes": "^3.3.0",

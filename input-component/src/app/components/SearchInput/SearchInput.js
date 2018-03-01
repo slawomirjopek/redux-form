@@ -5,7 +5,7 @@ import c from './searchInput.scss'
 
 const Option = Select.Option
 
-export class SearchInput extends React.Component {
+export default class SearchInput extends React.Component {
   static propTypes = {
     data: PropTypes.arrayOf(
       PropTypes.shape({

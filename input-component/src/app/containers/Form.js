@@ -1,7 +1,7 @@
 import React from "react"
 import {reduxForm, Field} from "redux-form"
 import { InputComponent } from "../components/Input/Input"
-import { SearchInput } from "../components/SearchInput/SearchInput"
+import SearchInput from "../components/SearchInput/SearchInput"
 
 const validation = values => {
   const errors = {
@@ -58,52 +58,7 @@ class Form extends React.Component {
           onClick={() => console.log('click')}
         />
 
-        <InputComponent
-          label={{
-            label: 'second field',
-          }}
-          input={{
-            value: this.state.inputValue,
-            name: 'fieldTwo',
-            onClick: this.makeTouched,
-            onChange: this.updateValue,
-          }}
-          meta={{
-            error: ['Error1', 'Error2'],
-            touched: this.state.touched,
-          }}
-          type="text"
-          placeholder="any values"
-        />
-
-        <SearchInput
-          data={[
-            {
-              value: 'value1',
-              text: 'value1',
-            },
-            {
-              value: 'value2',
-              text: 'value2',
-            },
-          ]}
-          input={{
-            name: 'name',
-            onChange: () => {},
-            onBlur: () => {},
-          }}
-          placeholder='placeholder'
-          meta={{
-            error: 'Error',
-            touched: false,
-          }}
-        />
-
         <Field
-          input={{
-            onBlur: () => { console.log('onBlur') },
-            onChange: (value) => { console.log(value) },
-          }}
           data={[
             {
               value: 'value1',
@@ -117,6 +72,8 @@ class Form extends React.Component {
           name="searchField"
           component={SearchInput}
           placeholder="Search..."
+          onBlur={() => { console.log('onBlur') }}
+          onChange={(value) => { console.log(value) }}
         />
 
         <div>
