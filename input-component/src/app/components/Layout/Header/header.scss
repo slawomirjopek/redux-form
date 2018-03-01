@@ -1,0 +1,31 @@
+@import '../../../styles/base.scss';
+
+.wrapper {
+  @include m(1);
+}
+
+.list {
+  @include m(0);
+  @include p(0);
+
+  &Item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      border-right: 1px solid silver;
+    }
+
+    :global {
+      .nav-link {
+        @include p(1, 2);
+
+        display: block;
+        text-decoration: none;
+
+        &.active {
+          color: red;
+        }
+      }
+    }
+  }
+}
