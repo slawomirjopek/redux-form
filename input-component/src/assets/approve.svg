@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="8px" viewBox="0 0 10 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Approve</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M10,1.56228956 C10,1.74186397 9.93978555,1.89449993 9.81935484,2.02020202 L4.27096774,7.81144781 C4.15053703,7.9371499 4.00430194,8 3.83225806,8 C3.66021419,8 3.5139791,7.9371499 3.39354839,7.81144781 L0.180645161,4.45791246 C0.0602144516,4.33221037 0,4.17957441 0,4 C0,3.82042559 0.0602144516,3.66778963 0.180645161,3.54208754 L1.05806452,2.62626263 C1.17849523,2.50056054 1.32473032,2.43771044 1.49677419,2.43771044 C1.66881806,2.43771044 1.81505316,2.50056054 1.93548387,2.62626263 L3.83225806,4.61279461 L8.06451613,0.188552189 C8.18494684,0.062850101 8.33118194,0 8.50322581,0 C8.67526968,0 8.82150477,0.062850101 8.94193548,0.188552189 L9.81935484,1.1043771 C9.93978555,1.23007919 10,1.38271515 10,1.56228956 Z" id="path-1"></path>
+    </defs>
+    <g id="States" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-570.000000, -224.000000)">
+        <g id="Accept" transform="translate(555.000000, 208.000000)">
+            <g id="Icon/Approve" transform="translate(15.000000, 16.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="" fill="#33D7B0" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <g id="Color/Green" mask="url(#mask-2)" fill="#33D7B0" fill-rule="evenodd">
+                    <rect id="Rectangle-5" x="0" y="0" width="10" height="8"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

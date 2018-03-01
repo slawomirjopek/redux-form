@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Low</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.375,12.9925847 L1.625,12.9925847 C0.727887205,12.9925847 0,12.265172 0,11.3681144 L0,1.62447034 C0,0.727412703 0.727887205,0 1.625,0 L11.375,0 C12.2721128,0 13,0.727412703 13,1.62447034 L13,11.3681144 C13,12.265172 12.2721128,12.9925847 11.375,12.9925847 Z M1.625,11.3678496 L11.375,11.3675847 L11.375,1.62447034 L1.625,1.625 L1.625,11.3678496 Z M7.54922912,5.11210377 C7.86642664,4.79469935 8.38087316,4.79453161 8.69827758,5.11172912 C9.01568201,5.42892664 9.01584975,5.94337316 8.69865223,6.26077758 L7.07471155,7.88577758 C6.75736777,8.20332838 6.24263223,8.20332838 5.92528845,7.88577758 L4.30134777,6.26077758 C3.98415025,5.94337316 3.98431799,5.42892664 4.30172242,5.11172912 C4.61912684,4.79453161 5.13357336,4.79469935 5.45077088,5.11210377 L6.5,6.16201733 L7.54922912,5.11210377 Z" id="path-1"></path>
+    </defs>
+    <g id="Segmentation-tab1-newColumn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1069.000000, -468.000000)">
+        <g id="Group-15" transform="translate(1053.000000, 448.000000)">
+            <g id="Publish-Draft" transform="translate(16.000000, 19.000000)">
+                <g id="Icon/Low" transform="translate(0.000000, 1.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="#7B8FA5" fill-rule="nonzero" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

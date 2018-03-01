@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="13px" viewBox="0 0 12 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/text</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.17,12.89275 C0.0984996425,12.8212496 0.06275,12.7318755 0.06275,12.624625 L0.0985,12.46375 L4.3885,0.934375 C4.50766726,0.636456844 4.72216512,0.4875 5.032,0.4875 L6.99825,0.4875 C7.30808488,0.4875 7.52258274,0.636456844 7.64175,0.934375 L11.93175,12.46375 L11.9675,12.624625 C11.9675,12.7318755 11.9287712,12.8212496 11.8513125,12.89275 C11.7738538,12.9642504 11.6874588,13 11.592125,13 L10.00125,13 C9.75099875,13 9.57820881,12.8867928 9.482875,12.660375 L8.660625,10.4975 L3.369625,10.4975 L2.547375,12.660375 C2.45204119,12.8867928 2.27925125,13 2.029,13 L0.438125,13 C0.330874464,13 0.241500358,12.9642504 0.17,12.89275 Z M3.99525,8.424 L8.035,8.424 L6.015125,2.9185 L3.99525,8.424 Z" id="path-1"></path>
+    </defs>
+    <g id="Segmentation-tab1-newColumn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1070.000000, -533.000000)">
+        <g id="Group-15" transform="translate(1053.000000, 448.000000)">
+            <g id="Publish-Draft-Copy-2" transform="translate(17.000000, 84.000000)">
+                <g id="Icon/text" transform="translate(0.000000, 1.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="A" fill="#8A97A7" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

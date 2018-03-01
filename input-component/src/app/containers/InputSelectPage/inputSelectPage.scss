@@ -9,3 +9,16 @@
   border-top: 1px solid silver;
   border-bottom: 1px solid silver;
 }
+
+.section {
+  @include p(2);
+  @include m(2);
+
+  border: 1px solid silver;
+
+  h3 {
+    @include mb(2);
+
+    text-align: center;
+  }
+}

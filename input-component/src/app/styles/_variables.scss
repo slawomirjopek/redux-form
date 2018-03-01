@@ -1,3 +1,5 @@
+// Variables
+// Palette
 $color-shade-amount: 15%;
 $color-trans-amount: 0.5;
 
@@ -39,6 +41,8 @@ $color-green-transparent-25: rgba(51, 215, 176, 0.25);
 
 $color-red-transparent-10: rgba(231, 64, 87, 0.1);
 $color-red-transparent-25: rgba(231, 64, 87, 0.25);
+
+$color-tag-border: #DEE5ED;
 
 // Gradients
 $gradient-blue: linear-gradient(to right, #37a0f6 0%, #387ee9 100%);
@@ -105,8 +109,9 @@ $spacing-sizes: (
         0.5: 5px,
         1: 10px,
         1.5: 15px,
-        3: 30px,
         2: 20px,
+        3: 30px,
+        4: 40px,
         5: 50px,
         10: 100px,
 );
@@ -151,6 +156,27 @@ $typography: (
                         font-size: 13px,
                         line-height: 36px,
                         font-weight: 500,
+                )
+        ),
+        dropdown: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 14px,
+                        line-height: 17px,
+                )
+        ),
+        badgeDropdown: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 14px,
+                )
+        ),
+        badgeTag: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 12px,
+                        font-weight: 500,
+                        line-height: 25px,
                 )
         ),
         input: (

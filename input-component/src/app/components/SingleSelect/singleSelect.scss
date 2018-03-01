@@ -1,0 +1,19 @@
+@import '../../styles/base.scss';
+
+.wrapper {
+  :global {
+    @import '~antd/lib/select/style/index';
+  }
+
+  .select {
+    @include size(100%);
+  
+    font-size: 14px;
+    color: $color-black;
+  
+    .option {
+      font-size: 14px;
+      color: $color-black;
+    }
+  }
+}
