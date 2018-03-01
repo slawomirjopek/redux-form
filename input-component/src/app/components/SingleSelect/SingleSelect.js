@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Select } from 'antd'
-import cn from 'classnames'
 import c from './singleSelect.scss'
 
 const Option = Select.Option
@@ -15,6 +14,11 @@ export default class SingleSelect extends React.Component {
         value: PropTypes.string.isRequired,
       })
     ),
+    input: PropTypes.shape({
+      name: PropTypes.string,
+      onChange: PropTypes.func,
+      onBlur: PropTypes.func,
+    }),
     disabled: PropTypes.bool,
     selectedValue: PropTypes.string,
   }
@@ -22,7 +26,10 @@ export default class SingleSelect extends React.Component {
   static defaultProps = {
     options: [],
     disabled: false,
-    selectedValue: null,
+    selectedValue: '',
+    showArrow: true,
+    mode: '',
+    filterOption: true,
     input: {
       name: '',
       onChange: () => {},
@@ -47,7 +54,14 @@ export default class SingleSelect extends React.Component {
   }
 
   render () {
-    const { selectedValue, options, disabled, input } = this.props
+    const {
+      selectedValue,
+      options,
+      disabled,
+      input,
+      mode,
+      filterOption,
+    } = this.props
 
     return (
       <div className={c.wrapper}>
@@ -59,6 +73,9 @@ export default class SingleSelect extends React.Component {
           onBlur={this.onBlur}
           onChange={this.onChange}
           defaultValue={selectedValue}
+          showArrow={true}
+          mode={mode}
+          filterOption={filterOption}
         >
           {options.map(({ label, value, disabled }) =>
             <Option
