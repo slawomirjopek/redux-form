@@ -41,12 +41,6 @@ class InputPageComponent extends React.Component {
           placeholder="any values"
           onChange={() => console.log('change')}
         />
-
-        <div>
-          <button
-            type="submit"
-          >Submit</button>
-        </div>
       </div>
     )
   }
