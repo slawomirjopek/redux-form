@@ -14,7 +14,6 @@ export class InputComponent extends React.Component {
     id: PropTypes.string,
     disabled: PropTypes.bool,
     placeholder: PropTypes.string,
-    defaultValue: PropTypes.string,
     input: PropTypes.shape({
       name: PropTypes.string.isRequired,
       value: PropTypes.string,
@@ -34,6 +33,9 @@ export class InputComponent extends React.Component {
       label: '',
       position: 'top',
     },
+    input: {
+      value: '',
+    },
     meta: {
       error: '',
       touched: false,
@@ -48,7 +50,7 @@ export class InputComponent extends React.Component {
       }
     } = this.props
 
-    onChange(value)
+    if (onChange) onChange(value)
   }
 
   render() {
@@ -81,31 +83,25 @@ export class InputComponent extends React.Component {
         </div>
         }
 
-          <div className={c.inputContainer}>
-            <AntInput
-              {...input}
-              id={id}
-              className={cn(c.input, {
-                [c.inputError]: error && touched,
-              })}
-              placeholder={placeholder}
-              type={type}
-              disabled={disabled}
-              size='large'
-            />
+        <div className={c.inputContainer}>
+          <AntInput
+            {...input}
+            id={id}
+            className={cn(c.input, {
+              [c.inputError]: error && touched,
+            })}
+            placeholder={placeholder}
+            type={type}
+            disabled={disabled}
+            size='large'
+          />
 
-            {(error && touched) &&
-            <div className={c.errorsContainer}>
-              {Array.isArray(error) ?
-                <ul className={c.errorList}>
-                  {error.map((error, i) => (
-                    <li className={c.error} key={i}>{error}</li>
-                  ))}
-                </ul> : <p className={c.error}>{error}</p>
-              }
-            </div>
-            }
+          {(error && touched) &&
+          <div className={c.errorsContainer}>
+            {error}
           </div>
+          }
+        </div>
       </div>
     )
   }

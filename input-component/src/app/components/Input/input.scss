@@ -62,16 +62,5 @@
 
 .errorsContainer {
   @include mt(0.5);
-}
-
-.errorList {
-  @include m(0);
-  @include p(0);
-
-  display: block;
-  list-style-type: none;
-}
-
-.error {
   @include font(inputError, $color-error);
 }
