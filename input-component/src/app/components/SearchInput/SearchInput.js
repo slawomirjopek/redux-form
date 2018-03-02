@@ -1,5 +1,6 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import SingleSelect from '../SingleSelect/SingleSelect'
 import c from './searchInput.scss'
 
@@ -26,6 +27,10 @@ export default class SearchInput extends React.Component {
       error: '',
       touched: false,
     },
+    classes: {
+      wrapper: '',
+      button: '',
+    }
   }
 
   render () {
@@ -37,10 +42,11 @@ export default class SearchInput extends React.Component {
         error,
         touched,
       },
+      classes,
     } = this.props
 
     return (
-      <div className={c.wrapper}>
+      <div className={cn(c.wrapper, classes.wrapper)}>
         <div className={c.selectContainer}>
           <SingleSelect
             input={input}
@@ -53,7 +59,7 @@ export default class SearchInput extends React.Component {
           />
 
           <button
-            className={c.searchIcon}
+            className={cn(c.searchIcon, classes.button)}
             type='submit'
           />
         </div>

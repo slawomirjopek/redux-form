@@ -1,0 +1,33 @@
+@import '../../styles/base.scss';
+
+.wrapper {
+  @include px(1);
+
+  background: $color-white;
+
+  :global {
+    .ant-select .ant-select-selection--single {
+      height: 80px;
+      border: 0;
+    }
+
+    .ant-select .ant-select-selection__rendered {
+      @include m(0);
+
+      height: 100%;
+    }
+
+    .ant-select-focused .ant-select-selection,
+    .ant-select-selection:focus,
+    .ant-select-selection:active {
+      border-color: unset;
+      outline: 0;
+      box-shadow: unset;
+    }
+  }
+}
+
+.searchIcon {
+  left: 0;
+}
+
