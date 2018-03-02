@@ -21,6 +21,7 @@ export default class SingleSelect extends React.Component {
     }),
     disabled: PropTypes.bool,
     selectedValue: PropTypes.string,
+    placeholder: PropTypes.string,
   }
 
   static defaultProps = {
@@ -30,6 +31,7 @@ export default class SingleSelect extends React.Component {
     showArrow: true,
     mode: '',
     filterOption: true,
+    placeholder: '',
     input: {
       name: '',
       onChange: () => {},
@@ -37,7 +39,7 @@ export default class SingleSelect extends React.Component {
     },
   }
 
-  onChange = (value) => {
+  onChange = value => {
     const { input } = this.props
     if (!!input) {
       const { onChange } = input
@@ -61,6 +63,7 @@ export default class SingleSelect extends React.Component {
       input,
       mode,
       filterOption,
+      placeholder,
     } = this.props
 
     return (
@@ -76,6 +79,7 @@ export default class SingleSelect extends React.Component {
           showArrow={true}
           mode={mode}
           filterOption={filterOption}
+          placeholder={placeholder}
         >
           {options.map(({ label, value, disabled }) =>
             <Option

@@ -1,6 +1,7 @@
 import React from 'react'
 import { reduxForm, Field } from 'redux-form'
-import { InputComponent } from "../../components/Input/Input"
+import { InputComponent } from '../../components/Input/Input'
+import SearchInput from '../../components/SearchInput/SearchInput'
 
 const c = require('./inputPage.scss')
 
@@ -41,6 +42,25 @@ class InputPageComponent extends React.Component {
           placeholder="any values"
           onChange={() => console.log('change')}
         />
+
+        <br/>
+
+        <Field
+          options={[
+            {
+              label: 'value1',
+              value: 'value1',
+            },
+            {
+              label: 'value2',
+              value: 'value2',
+            },
+          ]}
+          name="fieldTwo"
+          component={SearchInput}
+          placeholder="placeholder"
+          onChange={() => console.log('change')}
+        />
       </div>
     )
   }
@@ -50,7 +70,8 @@ export const InputPage = reduxForm({
   form: "InputPageForm",
   validate: validation,
   initialValues: {
-    fieldOne: 'Default value'
+    fieldOne: 'Default value',
+    fieldTwo: 'Default value 2'
   }
 })(InputPageComponent)
 

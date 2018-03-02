@@ -1,16 +1,15 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
-import { Select } from 'antd'
+import SingleSelect from '../SingleSelect/SingleSelect'
 import c from './searchInput.scss'
-
-const Option = Select.Option
 
 export default class SearchInput extends React.Component {
   static propTypes = {
-    data: PropTypes.arrayOf(
+    options: PropTypes.arrayOf(
       PropTypes.shape({
+        disabled: PropTypes.bool,
+        label: PropTypes.string.isRequired,
         value: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired,
       })
     ),
     placeholder: PropTypes.string,
@@ -21,38 +20,18 @@ export default class SearchInput extends React.Component {
   }
 
   static defaultProps = {
-    input: {
-      name: '',
-      onChange: () => {},
-      onBlur: () => {},
-    },
-    data: [],
+    options: [],
+    placeholder: '',
     meta: {
       error: '',
       touched: false,
     },
   }
 
-  onChange = (value) => {
-    const { input } = this.props
-    if (!!input) {
-      const { onChange } = input
-      onChange(value)
-    }
-  }
-
-  onBlur = () => {
-    const { input } = this.props
-    if (!!input) {
-      const { onBlur, value } = input
-      onBlur(value)
-    }
-  }
-
   render () {
     const {
       input,
-      data,
+      options,
       placeholder,
       meta: {
         error,
@@ -63,28 +42,26 @@ export default class SearchInput extends React.Component {
     return (
       <div className={c.wrapper}>
         <div className={c.selectContainer}>
-          <Select
-            {...input}
+          <SingleSelect
+            input={input}
             className={c.select}
+            options={options}
             mode='combobox'
             size='large'
             placeholder={placeholder}
             filterOption={false}
-            onBlur={this.onBlur}
-            onChange={this.onChange}
-          >
-            {data.map(({ value, text }) =>
-              <Option key={value}>{text}</Option>
-            )}
-          </Select>
+          />
 
-          <span className={c.searchIcon}/>
+          <button
+            className={c.searchIcon}
+            type='submit'
+          />
         </div>
 
         {(error && touched) &&
-          <div className={c.errorsContainer}>
-            {error}
-          </div>
+        <div className={c.errorsContainer}>
+          {error}
+        </div>
         }
       </div>
     )
