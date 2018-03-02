@@ -31,36 +31,38 @@ class InputPageComponent extends React.Component {
       <div>
         <h1 className={c.pageTitle}>InputPage</h1>
 
-        <Field
-          label={{
-            label: 'first field',
-            position: 'left',
-          }}
-          name="fieldOne"
-          component={InputComponent}
-          type="text"
-          placeholder="any values"
-          onChange={() => console.log('change')}
-        />
+        <form onSubmit={this.props.handleSubmit}>
+          <Field
+            label={{
+              label: 'first field',
+              position: 'left',
+            }}
+            name="fieldOne"
+            component={InputComponent}
+            type="text"
+            placeholder="any values"
+            onChange={() => console.log('change')}
+          />
 
-        <br/>
+          <br/>
 
-        <Field
-          options={[
-            {
-              label: 'value1',
-              value: 'value1',
-            },
-            {
-              label: 'value2',
-              value: 'value2',
-            },
-          ]}
-          name="fieldTwo"
-          component={SearchInput}
-          placeholder="placeholder"
-          onChange={() => console.log('change')}
-        />
+          <Field
+            options={[
+              {
+                label: 'value1',
+                value: 'value1',
+              },
+              {
+                label: 'value2',
+                value: 'value2',
+              },
+            ]}
+            name="fieldTwo"
+            component={SearchInput}
+            placeholder="placeholder"
+            onChange={() => console.log('change')}
+          />
+        </form>
       </div>
     )
   }
@@ -69,6 +71,7 @@ class InputPageComponent extends React.Component {
 export const InputPage = reduxForm({
   form: "InputPageForm",
   validate: validation,
+  onSubmit: (v) => { console.log(v) },
   initialValues: {
     fieldOne: 'Default value',
     fieldTwo: 'Default value 2'
