@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Select } from 'antd'
+import 'antd/lib/select/style/css'
 import c from './singleSelect.scss'
 
 const Option = Select.Option

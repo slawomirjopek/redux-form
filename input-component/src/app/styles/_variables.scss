@@ -7,14 +7,21 @@ $color-black: #364658;
 
 $color-gray: #7b8fa5;
 $color-gray-light: #dee5ed;
+$color-gray-lighter: #e6ecf2;
 
 $color-white: #fff;
 
+$color-blue-dark: #374657;
 $color-blue: #387fea;
 $color-blue-light: #dce6f5;
 
 $color-green: #33d7b0;
 $color-green-light: #dbefef;
+
+$color-checkbox-blue: #3280e5;
+$color-checkbox-gray: #a3bacf;
+
+$color-shadow: #a5b9d0;
 
 $color-orange: #e78740;
 $color-orange-light: #ede7e4;
@@ -100,6 +107,7 @@ $z-indexes: (
         'modal',
         'intercom',
         'tooltip',
+        'header',
         'body',
 );
 
@@ -134,6 +142,22 @@ $typography: (
                         line-height: 19px,
                         font-weight: 400,
                 )
+        ),
+        h1-xs: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 11px,
+                        line-height: 13px,
+                        font-weight: 400,
+                )
+        ),
+        h1: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 14px,
+                        line-height: 24px,
+                        font-weight: 400,
+                ),
         ),
         h2: (
                 base: (
@@ -204,6 +228,23 @@ $typography: (
                         text-transform: uppercase,
                 )
         ),
+        inputLangLabel: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 11px,
+                        line-height: 11px,
+                        font-weight: 400,
+                        text-transform: uppercase,
+                )
+        ),
+        tooltip: (
+                base: (
+                        font-family: $font-family-base,
+                        font-size: 10px,
+                        line-height: 12px,
+                        font-weight: 500,
+                )
+        )
 );
 
 

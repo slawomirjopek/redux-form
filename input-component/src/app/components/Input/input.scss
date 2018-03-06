@@ -4,12 +4,10 @@
   @include flex(column, $justify: center);
   @include mb(1.5);
 
-  :global {
-    @import '~antd/lib/input/style/index';
-  }
-
   &Row {
-    flex-direction: row;
+    @include media-breakpoint-up (md) {
+      flex-direction: row;
+    }
   }
 }
 
@@ -18,8 +16,6 @@
 
   .input {
     @include font(input, $color-black);
-
-    border-color: $color-gray-light;
 
     &Error {
       border-color: $color-error;
@@ -47,12 +43,15 @@
 
 .containerRow {
   .label {
-    @include flex($align: center, $justify: flex-end);
-    @include mb(0);
+    @include media-breakpoint-up (md) {
+      @include flex($align: center, $justify: flex-end);
+      @include mb(0);
+    }
 
     flex: 0 0 30%;
-    max-width: 180px;
+    max-width: 200px;
     padding-right: 32px;
+    word-break: break-word;
   }
 
   .inputContainer {

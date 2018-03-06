@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Input as AntInput } from 'antd'
 import cn from 'classnames'
+import 'antd/lib/input/style/css'
 import c from './input.scss'
 
 export class InputComponent extends React.Component {

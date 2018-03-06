@@ -2,8 +2,6 @@
 
 .wrapper {
   :global {
-    @import '~antd/lib/select/style/index';
-
     .ant-select-selection {
       @include font(input, $color-gray);
       @include relative;
@@ -20,37 +18,77 @@
       @include pl(3);
 
       border-radius: 8px;
-      border: 1px solid $color-gray-light;
     }
   }
+}
 
-  .select {
-    @include size(100%);
+.select {
+  @include size(100%);
+  @include font(dropdown, $color-black);
 
+  .option {
     font-size: 14px;
     color: $color-black;
-
-    .option {
-      font-size: 14px;
-      color: $color-black;
-    }
   }
+}
 
-  .selectContainer {
-    @include relative;
-  }
+.selectContainer {
+  @include relative;
+}
 
-  .searchIcon {
-    @include absolute(top 50% left 14px);
-    @include size(16px);
+.searchIcon {
+  @include absolute(top 50% left 14px);
+  @include size(16px);
+  @include z-index(tooltip);
 
-    display: block;
-    transform: translateY(-50%);
-    background: url('../../../assets/icon-search.svg') no-repeat;
-  }
+  display: block;
+  transform: translateY(-50%);
+  border: 0;
+  background: url('../../../assets/icon-search.svg') no-repeat;
+  cursor: pointer;
 }
 
 .errorsContainer {
   @include mt(0.5);
   @include font(inputError, $color-error);
+}
+
+.dropdown {
+  :global {
+    background-color: transparent;
+    box-shadow: unset;
+    box-sizing: unset;
+    width: auto !important;
+    border-radius: 0;
+
+    .ant-select-dropdown-menu-item-selected,
+    .ant-select-dropdown-menu-item-selected:hover {
+      background-color: $color-white;
+      font-weight: 500;
+    }
+    .ant-select-dropdown-menu-item-active {
+      background-color: $color-white;
+    }
+  }
+
+  div {
+    @include mt(1);
+
+    background-color: $color-white !important;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid $color-gray-lighter;
+
+    ul {
+      @include py(0.5);
+
+      > li {
+        @include p(0.5, 1.5, 0.5, 1.5);
+        @include font(dropdown, $color-black);
+
+        min-width: 270px;
+        line-height: 1.5;
+      }
+    }
+  }
 }

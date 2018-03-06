@@ -2,6 +2,7 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 import SingleSelect from '../SingleSelect/SingleSelect'
+import 'antd/lib/select/style/css'
 import c from './searchInput.scss'
 
 export default class SearchInput extends React.Component {
