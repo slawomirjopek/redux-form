@@ -1,0 +1,19 @@
+@import '../../styles/base.scss';
+
+.overlay {
+  :global {
+    .ant-tooltip-inner {
+      @include font(tooltip);
+
+      background: $color-blue-dark;
+      min-height: 10px;
+      box-shadow: unset;
+    }
+
+    .ant-tooltip-placement-top .ant-tooltip-arrow,
+    .ant-tooltip-placement-topLeft .ant-tooltip-arrow,
+    .ant-tooltip-placement-topRight .ant-tooltip-arrow {
+      border-top-color: $color-blue-dark;
+    }
+  }
+}

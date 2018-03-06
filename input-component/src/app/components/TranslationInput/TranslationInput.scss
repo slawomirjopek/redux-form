@@ -1,0 +1,103 @@
+@import '../../styles/base.scss';
+
+.container {
+  @include flex(column, $justify: center);
+  @include mb(1.5);
+
+  &Row {
+    @include media-breakpoint-up (md) {
+      flex-direction: row;
+    }
+  }
+
+  &.themeOne {
+    @include mb(0.5);
+  }
+}
+
+.inputContainer {
+  flex: 1 0 100%;
+
+  .input {
+    @include font(input, $color-black);
+
+    &Error {
+      border-color: $color-error;
+      color: $color-error;
+
+      &:hover {
+        border-color: $color-error;
+      }
+
+      &:focus {
+        border-color: $color-error;
+        box-shadow: 0 0 0 2px $color-red-transparent-25;
+      }
+    }
+  }
+}
+
+.label {
+  @include font(label, $color-gray);
+  @include mb(0.5);
+
+  flex: 0 0 100%;
+  flex-direction: column;
+
+  .labelText {
+    @include pb(0.5);
+
+    display: block;
+  }
+}
+
+.containerRow {
+  .label {
+    @include media-breakpoint-up (md) {
+      @include mb(0);
+      @include flex($align: flex-end, $justify: flex-start);
+    }
+
+    flex: 0 0 auto;
+    max-width: 200px;
+    padding-right: 32px;
+    min-height: 40px;
+  }
+
+  .inputContainer {
+    flex: 1 1 70%;
+  }
+}
+
+.errorsContainer {
+  @include mt(0.5);
+  @include font(inputError, $color-error);
+}
+
+.themeOne {
+  :global {
+    .ant-input {
+      @include p(0);
+
+      height: 24px;
+      border: 0;
+      background: transparent;
+
+      color: #364658;
+      font-family: Rubik;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+
+      @include placeholder {
+        color: #7b8fa5;
+        opacity: 1;
+      }
+
+      &:focus,
+      &:active {
+        box-shadow: unset;
+      }
+    }
+  }
+}

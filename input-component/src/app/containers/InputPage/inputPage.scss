@@ -9,3 +9,7 @@
   border-top: 1px solid silver;
   border-bottom: 1px solid silver;
 }
+
+.padding {
+  @include p(4);
+}

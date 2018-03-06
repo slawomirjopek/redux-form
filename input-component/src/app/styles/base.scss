@@ -1,4 +1,5 @@
 @import '~@7ninjas/scss-mixins/all';
+@import './mixins.scss';
 @import './variables.scss';
 
 :global {
@@ -22,3 +23,4 @@
     }
   }
 }
+

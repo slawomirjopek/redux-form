@@ -1,0 +1,62 @@
+@import '../../styles/base.scss';
+
+.wrapper {
+  @include flex($align: center);
+}
+
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+
+  &Info {
+    @include size(17px);
+    @include mr(1);
+
+    flex: 0 0 auto;
+    background-image: url('../../../assets/icon-info.svg');
+    cursor: pointer;
+  }
+
+  &Active {
+    @include size(11px);
+    @include absolute(left 7px);
+
+    background-image: url('../../../assets/icon-translate.svg');
+  }
+
+  &Inactive {
+    @include size(11px);
+    @include absolute(left 7px);
+
+    background-image: url('../../../assets/icon-nontranslate.svg');
+  }
+}
+
+.label {
+  @include font(inputLangLabel, $color-gray);
+  @include ml(1);
+
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+
+  &.current {
+    color: $color-black;
+    font-weight: 500;
+  }
+}
+
+.lang {
+  @include relative;
+
+  background-color: $color-gray-lighter;
+  padding: 6px 10px 6px 18px;
+  min-width: 28px;
+  min-height: 24px;
+  line-height: 11px;
+
+  &:first-of-type {
+    @include mr(0.5);
+  }
+}

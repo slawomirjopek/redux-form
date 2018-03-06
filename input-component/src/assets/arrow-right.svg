@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="5px" height="8px" viewBox="0 0 5 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/ArrowRight</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.293009129,1.7073373 C-0.0974896356,1.31694036 -0.0976959993,0.683775412 0.292548203,0.29312381 C0.682792406,-0.0975277921 1.31570963,-0.0977342364 1.7062084,0.292662703 L4.70699087,3.2926627 C5.09766971,3.68323967 5.09766971,4.31676033 4.70699087,4.7073373 L1.7062084,7.7073373 C1.31570963,8.09773424 0.682792406,8.09752779 0.292548203,7.70687619 C-0.0976959993,7.31622459 -0.0974896356,6.68305964 0.293009129,6.2926627 L2.58626981,4 L0.293009129,1.7073373 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Segmentation-tab2" transform="translate(-1246.000000, -334.000000)">
+            <g id="New-Segment-Copy" transform="translate(437.000000, 300.000000)">
+                <g id="Group-13" transform="translate(15.000000, 15.000000)">
+                    <g id="Icon/ArrowRight" transform="translate(794.000000, 19.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Stroke-83" fill="#A5BAD0" fill-rule="nonzero" transform="translate(2.500000, 4.000000) scale(1, -1) translate(-2.500000, -4.000000) " xlink:href="#path-1"></use>
+                        <g id="Color/LightGray" mask="url(#mask-2)" fill="#A5BAD0" fill-rule="evenodd">
+                            <rect id="Rectangle-5" x="0" y="0" width="5" height="8"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
