@@ -26,7 +26,6 @@ export default class TranslationInput extends React.Component {
     input: PropTypes.shape({
       name: PropTypes.string.isRequired,
       value: PropTypes.string,
-      onClick: PropTypes.func,
       onChange: PropTypes.func,
     }).isRequired,
     meta: PropTypes.shape({
@@ -36,6 +35,7 @@ export default class TranslationInput extends React.Component {
     defaultLang: PropTypes.string.isRequired,
     theme: PropTypes.oneOf(['standard', 'theme-1']),
     langHidden: PropTypes.bool,
+    onClick: PropTypes.func,
     onChangeLang: PropTypes.func,
   }
 
@@ -84,17 +84,14 @@ export default class TranslationInput extends React.Component {
     if (onChange) onChange(e.target.value || value)
   }
 
-  onClick = () => {
+  onClick = e => {
     const {
-      input: {
-        value,
-        onClick,
-      }
+      onClick,
     } = this.props
 
     this.showLang()
 
-    if (onClick) onClick(value)
+    if (onClick) return onClick(e.target.value)
   }
 
   onChangeLang = lang => {

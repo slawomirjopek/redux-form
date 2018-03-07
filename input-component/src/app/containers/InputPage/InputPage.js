@@ -1,6 +1,8 @@
 import React from 'react'
-import { reduxForm, Field } from 'redux-form'
+import { reduxForm, Field, formValueSelector } from 'redux-form'
+import { findIndex, propEq } from 'ramda'
 import { InputComponent } from '../../components/Input/Input'
+import { connect } from 'react-redux'
 import SearchInput from '../../components/SearchInput/SearchInput'
 import HeaderSearch from '../../components/HeaderSearch'
 import TranslationInput from '../../components/TranslationInput'
@@ -28,6 +30,25 @@ const validation = values => {
 }
 
 class InputPageComponent extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      lang: [
+        {label: 'EN', code: 'en', active: false, current: false},
+        {label: 'FR', code: 'fr', active: false, current: false},
+        {label: 'NL', code: 'nl', active: false, current: false},
+      ],
+      currentLang: 'en',
+    }
+  }
+
+  getFieldName = () => `fieldName_${this.state.currentLang}`
+
+  setLang = lang => this.setState({ currentLang: lang })
+
+  onChangeLang = newLang => this.setLang(newLang)
+
   render() {
     return (
       <div>
@@ -123,6 +144,7 @@ class InputPageComponent extends React.Component {
             <TranslationInput
               input={{
                 name: 'name-en',
+                onChange: value => { console.log('onChange: ', value) },
               }}
               lang={[
                 {label: 'EN', code: 'en', active: false, current: false},
@@ -136,20 +158,24 @@ class InputPageComponent extends React.Component {
               defaultLang='en'
               placeholder='theme: theme-1, label top'
               langHidden={false}
+              onClick={value => { console.log('onClick: ', value) }}
+              onChangeLang={value => { console.log('onChangeLang: ', value) }}
             />
 
             <br/>
 
             <Field
-              lang={[
-                {label: 'EN', code: 'en', active: false, current: false},
-                {label: 'FR', code: 'fr', active: false, current: false},
-                {label: 'NL', code: 'nl', active: false, current: false},
-              ]}
-              name="fieldNameEn"
+              lang={this.state.lang}
+              name={this.getFieldName()}
               component={TranslationInput}
-              placeholder="placeholder"
-              defaultLang="en"
+              placeholder='placeholder'
+              defaultLang='en'
+              props={{
+                onClick: () => { console.log('onClick') },
+                onChangeLang: this.onChangeLang,
+              }}
+              onChange={() => { console.log('onChange') }}
+              langHidden={false}
             />
           </div>
         </form>
@@ -158,7 +184,13 @@ class InputPageComponent extends React.Component {
   }
 }
 
-export const InputPage = reduxForm({
+const selector = formValueSelector('InputPageForm')
+
+const mapStateToProps = state => ({
+  fields: selector(state, 'fieldName_en', 'fieldName_fr', 'fieldName_nl'),
+})
+
+export const InputPage = connect(mapStateToProps, {})(reduxForm({
   form: "InputPageForm",
   validate: validation,
   onSubmit: (v) => { console.log(v) },
@@ -166,7 +198,7 @@ export const InputPage = reduxForm({
     fieldOne: 'Default value',
     fieldTwo: 'Default value 2',
     fieldThree: 'Default value 3',
-    fieldNameEn: 'Default value EN',
+    fieldName_en: 'Default value EN',
   }
-})(InputPageComponent)
+})(InputPageComponent))
 
